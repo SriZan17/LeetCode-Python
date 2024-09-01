@@ -27,3 +27,19 @@ class Solution:
                 result.append(0)
 
         return result
+
+
+class Solution:
+    def productExceptSelf(self, nums):
+        left_product = []
+        right_product = []
+        result = []
+        for i in range(len(nums)):
+            result.append(1)
+        for j in range(1, len(nums)):
+            left_product[j] = left_product[j - 1] * nums[j - 1]
+        for i in range(len(nums) - 2, -1, -1):
+            right_product[i] = right_product[i + 1] * nums[i + 1]
+        for k in range(len(nums)):
+            result.append(left_product[k] * right_product[k])
+        return result
