@@ -1,3 +1,4 @@
+# using @cache automatically memoizes the results of the recursive function
 class Solution:
     def climbStairs(self, n: int) -> int:
         @cache
